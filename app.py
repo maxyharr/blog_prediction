@@ -15,7 +15,7 @@ def hello():
   tok = sent_tokenize(sample)
   start = request.args.get('start', default = 0, type = int)
   end = request.args.get('end', default = 10, type = int)
-  return jsonify({'tok': tok[start:end]})
+  return jsonify(tok[start:end])
 
 if __name__ == '__main__':
   app.run(host="0.0.0.0", port=port)
